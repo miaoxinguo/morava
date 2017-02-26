@@ -1,4 +1,4 @@
-package io.github.miaoxinguo.sbs.util;
+package io.github.miaoxinguo.common.util;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.binary.Hex;

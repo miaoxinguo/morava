@@ -1,4 +1,4 @@
-package io.github.miaoxinguo.sbs.util;
+package io.github.miaoxinguo.common.util;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;

@@ -1,4 +1,4 @@
-package io.github.miaoxinguo.sbs.exception;
+package io.github.miaoxinguo.common.exception;
 
 /**
  * 业务层异常基类

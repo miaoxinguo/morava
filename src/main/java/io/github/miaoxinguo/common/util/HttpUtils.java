@@ -1,6 +1,6 @@
-package io.github.miaoxinguo.sbs.util;
+package io.github.miaoxinguo.common.util;
 
-import io.github.miaoxinguo.sbs.constant.Constants;
+import io.github.miaoxinguo.common.constant.Constants;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.fluent.Request;
