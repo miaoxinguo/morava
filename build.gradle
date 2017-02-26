@@ -1,0 +1,40 @@
+group 'io.github.miaoxinguo'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+//定义版本号
+ext {
+    slf4jVersion = '1.7.21'
+    logbackVersion = '1.1.9'
+    junitVersion = '4.12'
+}
+
+[compileJava, javadoc, compileTestJava]*.options*.encoding = 'UTF-8'
+
+repositories {
+    jcenter()
+}
+
+// 通用依赖
+dependencies {
+    compile group: 'org.slf4j', name: 'slf4j-api', version: "${slf4jVersion}"
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.6'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+    compile group: 'org.apache.httpcomponents', name: 'httpasyncclient', version: '4.1.2'
+    compile group: 'org.apache.httpcomponents', name: 'fluent-hc', version: '4.5.2'
+
+    runtime group: 'ch.qos.logback', name: 'logback-core', version: "${logbackVersion}"
+    runtime group: 'ch.qos.logback', name: 'logback-classic', version: "${logbackVersion}"
+
+    testCompile group: 'junit', name: 'junit', version: "${junitVersion}"
+}
+
+// 设置是否下载源码和文档
+idea {
+    module {
+        downloadJavadoc = false
+        downloadSources = false
+    }
+}
