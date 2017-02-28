@@ -1,10 +1,8 @@
-group 'io.github.miaoxinguo'
-version '1.0-SNAPSHOT'
-
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'maven-publish'
 
-//定义版本号
+// 定义版本号
 ext {
     slf4jVersion = '1.7.21'
     logbackVersion = '1.1.9'
@@ -36,5 +34,27 @@ idea {
     module {
         downloadJavadoc = false
         downloadSources = false
+    }
+}
+
+group 'io.github.miaoxinguo'
+version '1.0-SNAPSHOT'
+
+// 覆盖已有的task (用于打包源文件, 用于定义某个`publication`中的源文件包, 如下面的: `artifact sourceJar`)
+task sourceJar(type: Jar) {
+    from sourceSets.main.allJava
+    classifier "sources" // 定义一个标志 (生成的jar包后面加上sources, 如: common-2.2.11-sources.jar)
+}
+
+// 发布到本地仓库
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            // 打包源码和class
+            from components.java    // 发布java组件
+
+            // 定义源码task
+            artifact sourceJar
+        }
     }
 }
