@@ -29,7 +29,7 @@ public final class MacUtils {
     }
 
     /**
-     * mac运算
+     * Mac运算
      *
      * @param text 明文
      * @param key 对称密钥

@@ -74,6 +74,4 @@ public final class JsonUtils {
         JavaType type = objectMapper.getTypeFactory().constructParametricType(List.class, clazz);
         return objectMapper.convertValue(text, type);
     }
-
-
 }

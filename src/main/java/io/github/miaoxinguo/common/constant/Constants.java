@@ -14,5 +14,4 @@ public final class Constants {
     public static final String SEPARATOR_COMMA = ",";
     public static final String SEPARATOR_SPACE = " ";
 
-
 }
