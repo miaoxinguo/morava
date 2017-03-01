@@ -33,21 +33,21 @@ public final class DateUtils {
     /**
      * 日期时间转为默认格式的字符串
      */
-    public static String toString(LocalDateTime dateTime){
+    public static String toString(LocalDateTime dateTime) {
         return dateTime.format(FORMATTER_DATETIME);
     }
 
     /**
      * 日期时间转为默认格式的字符串
      */
-    public static String toString(LocalDate date){
+    public static String toString(LocalDate date) {
         return date.format(FORMATTER_DATE);
     }
 
     /**
      * 日期时间转为默认格式的字符串
      */
-    public static String toString(LocalTime time){
+    public static String toString(LocalTime time) {
         return time.format(FORMATTER_TIME);
     }
 
@@ -76,7 +76,7 @@ public final class DateUtils {
      *
      * @param text yyyy-MM-dd HH:mm:ss格式字符串
      */
-    public static LocalDateTime parseDateTime(String text){
+    public static LocalDateTime parseDateTime(String text) {
         return LocalDateTime.parse(text, FORMATTER_DATETIME);
     }
 
@@ -85,7 +85,7 @@ public final class DateUtils {
      *
      * @param text yyyy-MM-dd格式字符串
      */
-    public static LocalDate parseDate(String text){
+    public static LocalDate parseDate(String text) {
         return LocalDate.parse(text, FORMATTER_DATE);
     }
 
@@ -94,14 +94,14 @@ public final class DateUtils {
      *
      * @param text HH:mm:ss格式字符串
      */
-    public static LocalTime parseTime(String text){
+    public static LocalTime parseTime(String text) {
         return LocalTime.parse(text, FORMATTER_TIME);
     }
 
     /**
      * Date对象转LocalDateTime对象
      */
-    public static LocalDateTime parse(java.util.Date date){
+    public static LocalDateTime parse(java.util.Date date) {
         SimpleDateFormat format = new SimpleDateFormat(DEFAULT_FORMAT_DATETIME);
         String s = format.format(date);
         return DateUtils.parseDateTime(s);
@@ -110,9 +110,8 @@ public final class DateUtils {
     /**
      * LocalDateTime转GMT时间
      */
-    public static String toGmtString(LocalDateTime time){
-        DateTimeFormatter formatter = DateTimeFormatter.RFC_1123_DATE_TIME
-                .withZone(ZoneId.of("GMT"));
+    public static String toGmtString(LocalDateTime time) {
+        DateTimeFormatter formatter = DateTimeFormatter.RFC_1123_DATE_TIME.withZone(ZoneId.of("GMT"));
         return formatter.format(time.toInstant(ZoneOffset.MIN));
     }
 

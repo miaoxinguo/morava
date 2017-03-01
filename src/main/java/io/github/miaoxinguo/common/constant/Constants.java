@@ -7,11 +7,15 @@ public final class Constants {
 
     private Constants() {}
 
-    // 编码
+    /**
+     * 编码
+     */
     public static final String ENCODING_DEFAULT = "UTF-8";
 
-    // 分隔符
+    /** 逗号分隔符 */
     public static final String SEPARATOR_COMMA = ",";
+
+    /** 空格分隔符 */
     public static final String SEPARATOR_SPACE = " ";
 
 }
