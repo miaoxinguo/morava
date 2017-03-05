@@ -1,4 +1,4 @@
-package io.github.miaoxinguo.common.util;
+package com.github.miaoxinguo.common.util;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;

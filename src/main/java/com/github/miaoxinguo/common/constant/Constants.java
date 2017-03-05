@@ -1,4 +1,4 @@
-package io.github.miaoxinguo.common.constant;
+package com.github.miaoxinguo.common.constant;
 
 /**
  * 通用常量

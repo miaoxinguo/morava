@@ -1,6 +1,6 @@
-package io.github.miaoxinguo.common.util;
+package com.github.miaoxinguo.common.util;
 
-import io.github.miaoxinguo.common.constant.Constants;
+import com.github.miaoxinguo.common.constant.Constants;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.fluent.Request;
