@@ -37,7 +37,7 @@ idea {
     }
 }
 
-group 'io.github.miaoxinguo'
+group 'com.github.miaoxinguo'
 version '1.0-SNAPSHOT'
 
 // 覆盖已有的task (用于打包源文件, 用于定义某个`publication`中的源文件包, 如下面的: `artifact sourceJar`)
