@@ -4,9 +4,12 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.MapType;
 import org.apache.commons.lang3.SerializationException;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Json 工具类 - Jackson 实现版本
@@ -56,7 +59,7 @@ public final class JsonUtils {
         try {
             return objectMapper.writeValueAsString(object);
         } catch (JsonProcessingException e) {
-            throw new SerializationException();
+            throw new SerializationException(e);
         }
     }
 
@@ -64,14 +67,34 @@ public final class JsonUtils {
      * Json字符串转对象
      */
     public static <T> T parseObject(String text, Class<T> clazz) {
-        return objectMapper.convertValue(text, clazz);
+        try {
+            return objectMapper.readValue(text, clazz);
+        } catch (IOException e) {
+            throw new SerializationException(e);
+        }
     }
 
     /**
      * 将 JsonArray 转换为对应的List
      */
-    public static <T> List<T> parseArray(String text, Class<T> clazz) {
+    public static <T> List<T> parseList(String text, Class<T> clazz) {
         JavaType type = objectMapper.getTypeFactory().constructParametricType(List.class, clazz);
-        return objectMapper.convertValue(text, type);
+        try {
+            return objectMapper.readValue(text, type);
+        } catch (IOException e) {
+            throw new SerializationException(e);
+        }
+    }
+
+    /**
+     * 转为Map
+     */
+    public static <K, V> Map<K, V> parseMap(String text, Class<K> keyClass, Class<V> valueClass) {
+        MapType mapType = objectMapper.getTypeFactory().constructMapType(Map.class, keyClass, valueClass);
+        try {
+            return objectMapper.readValue(text, mapType);
+        } catch (IOException e) {
+            throw new SerializationException(e);
+        }
     }
 }
