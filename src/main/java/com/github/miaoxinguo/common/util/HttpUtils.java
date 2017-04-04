@@ -8,10 +8,12 @@ import org.apache.http.entity.ContentType;
 import org.apache.http.message.BasicNameValuePair;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+@SuppressWarnings("WeakerAccess")
 public final class HttpUtils {
 
     // 默认连接超时时间
@@ -50,7 +52,7 @@ public final class HttpUtils {
                 .socketTimeout(socketTimeout)
                 .execute()
                 .returnContent()
-                .asString();
+                .asString(Charset.forName(Constants.ENCODING_DEFAULT));
     }
 
     /**

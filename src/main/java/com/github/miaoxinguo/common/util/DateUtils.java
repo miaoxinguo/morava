@@ -72,6 +72,15 @@ public final class DateUtils {
     }
 
     /**
+     * Date对象转LocalDateTime对象
+     */
+    public static LocalDateTime parseDateTime(java.util.Date date) {
+        SimpleDateFormat format = new SimpleDateFormat(DEFAULT_FORMAT_DATETIME);
+        String s = format.format(date);
+        return DateUtils.parseDateTime(s);
+    }
+
+    /**
      * 字符串转日期时间对象
      *
      * @param text yyyy-MM-dd HH:mm:ss格式字符串
@@ -96,15 +105,6 @@ public final class DateUtils {
      */
     public static LocalTime parseTime(String text) {
         return LocalTime.parse(text, FORMATTER_TIME);
-    }
-
-    /**
-     * Date对象转LocalDateTime对象
-     */
-    public static LocalDateTime parse(java.util.Date date) {
-        SimpleDateFormat format = new SimpleDateFormat(DEFAULT_FORMAT_DATETIME);
-        String s = format.format(date);
-        return DateUtils.parseDateTime(s);
     }
 
     /**

@@ -2,6 +2,8 @@ package com.github.miaoxinguo.common.util;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,6 +15,7 @@ import java.util.Map;
  * 测试 Json 工具类.
  */
 public class TestJsonUtils {
+    private static final Logger logger = LoggerFactory.getLogger(TestJsonUtils.class);
 
     @Test
     public void testParseArray() throws IOException {
@@ -21,7 +24,7 @@ public class TestJsonUtils {
         list.add("abc");
         String s = JsonUtils.toJsonString(list);
         List result = JsonUtils.parseList(s, String.class);
-
+        logger.debug("result is {}", result);
         Assert.assertEquals(list, result);
     }
 

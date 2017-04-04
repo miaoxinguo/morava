@@ -4,8 +4,8 @@ apply plugin: 'maven-publish'
 
 // 定义版本号
 ext {
-    slf4jVersion = '1.7.21'
-    logbackVersion = '1.1.9'
+    slf4jVersion = '1.7.22'
+    logbackVersion = '1.2.1'
     junitVersion = '4.12'
 }
 
