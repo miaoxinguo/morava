@@ -73,7 +73,7 @@ public final class HashUtils {
         try {
             md = MessageDigest.getInstance(alg);
         } catch (NoSuchAlgorithmException e) {
-            // ingore
+            // ignore
         }
         return md == null ? new byte[0] : md.digest(text.getBytes());
     }
