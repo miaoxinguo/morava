@@ -12,6 +12,7 @@ import java.security.NoSuchAlgorithmException;
 /**
  * 散列工具类
  */
+@SuppressWarnings("WeakerAccess")
 public final class HashUtils {
 
     private static final String HASH_ALG_SHA1 = "SHA1";

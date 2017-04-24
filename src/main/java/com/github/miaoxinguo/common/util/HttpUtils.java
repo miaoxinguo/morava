@@ -58,6 +58,7 @@ public final class HttpUtils {
     /**
      * POST请求
      */
+    @SuppressWarnings("unused")
     public static String doPost(String url, Map<String, String> params) throws IOException {
         return doPost(url, params, DEFAULT_CONNECT_TIMEOUT);
     }
@@ -94,6 +95,7 @@ public final class HttpUtils {
     /**
      * Post请求, 请求的数据为JSON格式
      */
+    @SuppressWarnings("unused")
     public static String doPostJson(String url, String content) throws IOException {
         return doPostJson(url, content, DEFAULT_CONNECT_TIMEOUT);
     }
