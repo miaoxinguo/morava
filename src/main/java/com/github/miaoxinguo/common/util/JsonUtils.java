@@ -16,6 +16,7 @@ import java.util.Map;
  *
  * Jackson 所有异常转为 apache common 的 SerializationException 抛出， 由 mvc 框架统一处理
  */
+@SuppressWarnings("WeakerAccess")
 public final class JsonUtils {
 
     private static ObjectMapper objectMapper = new ObjectMapper();

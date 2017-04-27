@@ -11,6 +11,7 @@ import java.time.format.DateTimeFormatter;
 /**
  * 日期时间工具类
  */
+@SuppressWarnings("WeakerAccess")
 public final class DateUtils {
 
     /**
